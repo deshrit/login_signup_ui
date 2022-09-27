@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Index</title>
+</head>
+<body>
+
+<h1>This is index page.</h1>
+
+<div id="demo"></div>
+
+<script type="text/javascript">
+	let search_params = location.search;
+	search_params = search_params.slice(1);
+	const arr = search_params.split('&');
+
+	let str = "";
+	for(let x in arr) {
+		let temp = arr[x].split('=');
+		str += temp[0] + ": " + temp[1] + "<br>"; 
+	}
+	document.getElementById("demo").innerHTML = str;
+</script>
+
+</body>
+</html>
