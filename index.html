@@ -12,7 +12,11 @@
 <div id="demo"></div>
 
 <script type="text/javascript">
+	let current_location = location.hostname;
 	let search_params = location.search;
+	if(!search_params) {
+		document.location.assign(current_location + 'login.html');
+	}
 	search_params = search_params.slice(1);
 	const arr = search_params.split('&');
 
